@@ -80,7 +80,9 @@ export type Post = {
 export const getStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
 
-  const posts: Post[] = await res.json()
+  const posts: Post[] = await res.json().catch((err) => {
+    console.error(err)
+  })
 
   return {
     props: {
