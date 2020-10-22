@@ -19,9 +19,7 @@ export default function BlogPost({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const posts: Post[] = await res.json().catch((err) => {
-    console.error(err)
-  })
+  const posts: Post[] = await res.json()
 
   const paths = posts.map((post) => ({
     params: { id: post.id.toString() },
@@ -55,9 +53,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   )
 
-  const post: Post = await res.json().catch((err) => {
-    console.error(err)
-  })
+  const post: Post = await res.json()
 
   return {
     props: {
