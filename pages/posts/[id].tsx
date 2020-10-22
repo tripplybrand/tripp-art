@@ -1,10 +1,14 @@
-import { GetStaticPropsContext, InferGetStaticPropsType, GetStaticPaths } from 'next'
+import {
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+  GetStaticPaths,
+} from 'next'
 import { Article } from '@components/Article'
 import type { Post } from '../index'
 
-export default function BlogPost({ post }
-  :InferGetStaticPropsType<typeof getStaticProps>) {
-
+export default function BlogPost({
+  post,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Article>
       <h1>{post.title}</h1>
@@ -18,41 +22,42 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts: Post[] = await res.json()
 
   const paths = posts.map((post) => ({
-    params: {id: post.id.toString()},
+    params: { id: post.id.toString() },
   }))
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
-
 }
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const { params } = context
 
   const emptyPost: Post = {
-      title: "Post not found",
-      body: "",
-      id: 0,
-      userId: 0
+    title: 'Post not found',
+    body: '',
+    id: 0,
+    userId: 0,
   }
 
-  if(!params?.id) {
+  if (!params?.id) {
     return {
       props: {
-        post: emptyPost
-      }
+        post: emptyPost,
+      },
     }
   }
 
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${params.id}`
+  )
 
   const post: Post = await res.json()
 
   return {
     props: {
-      post, 
+      post,
     },
   }
-} 
+}
