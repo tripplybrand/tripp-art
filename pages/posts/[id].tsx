@@ -3,7 +3,7 @@ import {
   InferGetStaticPropsType,
   GetStaticPaths,
 } from 'next'
-import { Article } from '@components/Article'
+import { Article, BlogpostImage } from '@components/Article'
 import type { Post } from '../index'
 
 export default function BlogPost({
@@ -12,6 +12,10 @@ export default function BlogPost({
   return (
     <Article>
       <h1>{post.title}</h1>
+      <BlogpostImage
+        src='/Mountain_Lake_Fisherman.jpg'
+        alt='Watercolor of boy fishing in Colorado'
+      />
       <p>{post.body}</p>
     </Article>
   )
