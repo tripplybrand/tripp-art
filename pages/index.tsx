@@ -46,10 +46,21 @@ export default function Home({
             css={paintingCss}
           ></img>
           <h3 css={paintingTitleCss}>
-            <cite className={styles.text_base}>
+            <cite className={styles.text_sm}>
               Elk Creek, Colorado circa 2003. Backpacking.
             </cite>
-            <span className={styles.text_sm}> 2020</span>
+          </h3>
+        </div>
+        <div>
+          <img
+            src='/Uganda_Papyrus_Swamp.jpg'
+            alt='Watercolor of papyrus swamp in Uganda'
+            css={paintingCss}
+          ></img>
+          <h3 css={paintingTitleCss}>
+            <cite className={styles.text_sm}>
+              Papyrus swamp in Uganda circa 2002. Mission trip.
+            </cite>
           </h3>
         </div>
         {/*
@@ -89,8 +100,12 @@ const mainCss = css`
 const titleCss = css`
   margin: 0;
   text-transform: uppercase;
-  color: #ff6356;
+  color: #302928;
 `
+//#FF6356
+//#eac3c2
+//#302928
+//#998381
 
 const subtitleCss = css`
   max-width: 50rem;
