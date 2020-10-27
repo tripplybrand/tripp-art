@@ -1,0 +1,79 @@
+.text_6xl {
+  font-family: Poppins;
+  font-size: 4rem;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.text_5xl {
+  font-family: Poppins;
+  font-size: 3rem;
+  line-height: 110%;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text_4xl {
+  font-family: Poppins;
+  font-size: 2.25rem;
+  line-height: 110%;
+  letter-spacing: 0em;
+  font-weight: 500;
+}
+
+.text_3xl {
+  font-family: Poppins;
+  font-size: 1.875rem;
+  line-height: 150%;
+  letter-spacing: 0em;
+  font-weight: 400;
+}
+
+.text_2xl {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: 0em;
+  font-weight: 300;
+}
+
+.text_xl {
+  font-family: Poppins;
+  font-size: 1.25rem;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  font-weight: 200;
+}
+
+.text_lg {
+  font-family: Work Sans;
+  font-size: 1.125rem;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.text_base {
+  font-family: Work Sans;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+.text_sm {
+  font-family: Work Sans;
+  font-size: 0.875rem;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+
+.text_xs {
+  font-family: Work Sans;
+  font-size: 0.75rem;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}

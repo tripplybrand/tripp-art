@@ -1,7 +1,6 @@
 import { InferGetStaticPropsType } from 'next'
-import Link from 'next/link'
 import Head from 'next/head'
-import styled from '@emotion/styled'
+import styles from '../styles/Theme.module.css'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
@@ -16,29 +15,17 @@ export default function Home({
         <title>Into My Own</title>
       </Head>
       <main css={mainCss}>
-        <h1
-          css={css`
-            ${titleCss};
-            ${text6xlCss};
-          `}
-        >
+        <h1 css={titleCss} className={styles.text_6xl}>
           {title}
         </h1>
-        <h2
-          css={css`
-            ${subtitleCss};
-            ${text2xlCss};
-          `}
-        >
+        <h2 css={subtitleCss} className={styles.text_2xl}>
           A series of paintings based on the artist's personal photographs taken
           in adolescence at the turn of the 21st century.
         </h2>
         <blockquote
           cite='https://bookshop.org/books/swann-s-way-e8bb3127-cd5c-4c15-a4e9-bc94b8f16e6e/9780142437964'
-          css={css`
-            ${blockquoteCss};
-            ${textSmCss};
-          `}
+          css={blockquoteCss}
+          className={styles.text_sm}
         >
           <p css={blockquoteContentCss}>
             The places we have known do not belong solely to the world of space
@@ -119,46 +106,6 @@ const blockquoteContentCss = css`
 const blockquoteFooterCss = css`
   margin: 0;
   text-align: right;
-`
-
-const text6xlCss = css`
-  font-family: Poppins;
-  font-size: 4rem;
-  line-height: 110%;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-`
-
-const text3xlCss = css`
-  font-family: Poppins;
-  font-size: 1.875rem;
-  line-height: 150%;
-  letter-spacing: 0em;
-  font-weight: 400;
-`
-
-const text2xlCss = css`
-  font-family: Poppins;
-  font-size: 1.5rem;
-  line-height: 150%;
-  letter-spacing: 0em;
-  font-weight: 300;
-`
-
-const textBaseCss = css`
-  font-family: Work Sans;
-  font-size: 1rem;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-`
-
-const textSmCss = css`
-  font-family: Work Sans;
-  font-size: 0.875rem;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  font-weight: 300;
 `
 
 export type Post = {
