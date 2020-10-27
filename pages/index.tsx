@@ -39,6 +39,19 @@ export default function Home({
             —Marcel Proust, <cite>Swann's Way</cite>
           </footer>
         </blockquote>
+        <div>
+          <img
+            src='/Mountain_Lake_Fisherman.jpg'
+            alt='Watercolor of boy fishing in Colorado'
+            css={paintingCss}
+          ></img>
+          <h3 css={paintingTitleCss}>
+            <cite className={styles.text_base}>
+              Elk Creek, Colorado circa 2003. Backpacking.
+            </cite>
+            <span className={styles.text_sm}> 2020</span>
+          </h3>
+        </div>
         {/*
         <List>
           {posts.map((post) => (
@@ -65,7 +78,7 @@ const containerCss = css`
 `
 
 const mainCss = css`
-  padding: 5rem 5rem;
+  padding: 5rem 3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -106,6 +119,19 @@ const blockquoteContentCss = css`
 const blockquoteFooterCss = css`
   margin: 0;
   text-align: right;
+`
+
+const paintingCss = css`
+  height: 92vh;
+  width: auto;
+  margin: 5rem 0 0 0;
+`
+
+const paintingTitleCss = css`
+  margin: 0 0;
+  cite {
+    font-style: italic;
+  }
 `
 
 export type Post = {
