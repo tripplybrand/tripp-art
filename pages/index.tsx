@@ -3,6 +3,9 @@ import Head from 'next/head'
 import styles from '../styles/Theme.module.css'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
+import Painting from '@components/Painting'
+
+console.log(Painting)
 
 const title: string = 'Into My Own'
 
@@ -40,26 +43,28 @@ export default function Home({
           </footer>
         </blockquote>
         <div>
-          <img
-            src='/Mountain_Lake_Fisherman.jpg'
-            alt='Watercolor of boy fishing in Colorado'
-            css={paintingCss}
-          ></img>
+          <Painting
+            srcSet={'Mountain_Lake_Fisherman.jpg 4790w,'}
+            sizes={'(max-width: 640px) 30rem, (max-width: 820px) 40rem, 50rem'}
+            src={'/Mountain_Lake_Fisherman.jpg'}
+            alt={'Watercolor of boy fishing in Colorado'}
+          />
           <h3 css={paintingTitleCss}>
             <cite className={styles.text_sm}>
-              Elk Creek, Colorado circa 2003. Backpacking.
+              Elk Creek, Colorado. Backpacking.
             </cite>
           </h3>
         </div>
         <div>
-          <img
-            src='/Uganda_Papyrus_Swamp.jpg'
-            alt='Watercolor of papyrus swamp in Uganda'
-            css={paintingCss}
-          ></img>
+          <Painting
+            srcSet={'Uganda_Papyrus_Swamp.jpg 4648w,'}
+            sizes={'(max-width: 640px) 30rem, (max-width: 820px) 40rem, 50rem'}
+            src={'/Uganda_Papyrus_Swamp.jpg'}
+            alt={'Watercolor of papyrus swamp in Uganda'}
+          />
           <h3 css={paintingTitleCss}>
             <cite className={styles.text_sm}>
-              Papyrus swamp in Uganda circa 2002. Mission trip.
+              Papyrus swamp in Uganda. Mission trip.
             </cite>
           </h3>
         </div>
@@ -134,12 +139,6 @@ const blockquoteContentCss = css`
 const blockquoteFooterCss = css`
   margin: 0;
   text-align: right;
-`
-
-const paintingCss = css`
-  height: 92vh;
-  width: auto;
-  margin: 5rem 0 0 0;
 `
 
 const paintingTitleCss = css`
