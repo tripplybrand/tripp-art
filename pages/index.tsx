@@ -5,8 +5,6 @@ import styles from '../styles/Theme.module.css'
 import { jsx, css } from '@emotion/core'
 import Painting from '@components/Painting'
 
-console.log(Painting)
-
 const title: string = 'Into My Own'
 
 export default function Home({
@@ -48,12 +46,8 @@ export default function Home({
             sizes={'(max-width: 640px) 30rem, (max-width: 820px) 40rem, 50rem'}
             src={'/Mountain_Lake_Fisherman.jpg'}
             alt={'Watercolor of boy fishing in Colorado'}
+            title={'Elk Creek, Colorado. Backpacking'}
           />
-          <h3 css={paintingTitleCss}>
-            <cite className={styles.text_sm}>
-              Elk Creek, Colorado. Backpacking.
-            </cite>
-          </h3>
         </div>
         <div>
           <Painting
@@ -61,12 +55,8 @@ export default function Home({
             sizes={'(max-width: 640px) 30rem, (max-width: 820px) 40rem, 50rem'}
             src={'/Uganda_Papyrus_Swamp.jpg'}
             alt={'Watercolor of papyrus swamp in Uganda'}
+            title={'Papyrus swamp in Uganda. Mission trip.'}
           />
-          <h3 css={paintingTitleCss}>
-            <cite className={styles.text_sm}>
-              Papyrus swamp in Uganda. Mission trip.
-            </cite>
-          </h3>
         </div>
         {/*
         <List>
@@ -139,13 +129,6 @@ const blockquoteContentCss = css`
 const blockquoteFooterCss = css`
   margin: 0;
   text-align: right;
-`
-
-const paintingTitleCss = css`
-  margin: 0 0;
-  cite {
-    font-style: italic;
-  }
 `
 
 export type Post = {
