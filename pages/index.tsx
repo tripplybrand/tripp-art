@@ -88,7 +88,7 @@ const containerCss = css`
 `
 
 const mainCss = css`
-  padding: 5rem 3rem;
+  padding: 5rem 3vw;
   flex: 1;
   display: flex;
   flex-direction: column;
