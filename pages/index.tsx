@@ -48,7 +48,7 @@ export default function Home({
             sizes={'(max-width: 768px) 92vw, (max-width: 1200px) 92vw, 92vw'}
             src={'/Mountain_Lake_Fisherman_4790.jpg'}
             alt={'Watercolor of boy fishing in Colorado'}
-            title={'Elk Creek, Colorado. Backpacking'}
+            title={'Elk Creek, Colorado. Backpacking.'}
           />
         </div>
         <div>
@@ -86,9 +86,9 @@ const containerCss = css`
   justify-content: center;
   align-items: center;
 `
-
+//Note: Paintings are set at 92vw so we take and split the remaining 8vw
 const mainCss = css`
-  padding: 5rem 3vw;
+  padding: 5rem 4vw;
   flex: 1;
   display: flex;
   flex-direction: column;
