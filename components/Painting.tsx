@@ -1,17 +1,12 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import styles from '../styles/Theme.module.css'
+import Image from 'next/image'
 
-const Painting = ({ srcSet, sizes, src, alt, title }: PaintingProps) => {
+const Painting = ({ src, alt, title, width, height }: PaintingProps) => {
   return (
-    <div>
-      <img
-        srcSet={srcSet}
-        sizes={sizes}
-        src={src}
-        alt={alt}
-        css={paintingCss}
-      />
+    <div css={paintingCss}>
+      <Image src={src} alt={alt} width={width} height={height} />
       <h3 css={paintingTitleCss}>
         <cite className={styles.text_sm}>{title}</cite>
       </h3>
@@ -20,15 +15,22 @@ const Painting = ({ srcSet, sizes, src, alt, title }: PaintingProps) => {
 }
 
 type PaintingProps = {
-  srcSet: string
-  sizes: string
   src: string
   alt: string
   title: string
+  width: number
+  height: number
 }
 
 const paintingCss = css`
   margin: 5rem 0 0 0;
+  width: 65vw;
+  @media only screen and (max-width: 1200px) {
+    width: 65vw;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 92vw;
+  }
 `
 
 const paintingTitleCss = css`
