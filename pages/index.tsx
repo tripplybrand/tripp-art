@@ -42,18 +42,22 @@ export default function Home({
         </blockquote>
         <div>
           <Painting
-            srcSet={'Mountain_Lake_Fisherman.jpg 4790w,'}
-            sizes={'(max-width: 640px) 30rem, (max-width: 820px) 40rem, 50rem'}
-            src={'/Mountain_Lake_Fisherman.jpg'}
+            srcSet={
+              'Mountain_Lake_Fisherman_4790.jpg 4790w, Mountain_Lake_Fisherman_1200.jpg 1200w, Mountain_Lake_Fisherman_768.jpg 768w,'
+            }
+            sizes={'(max-width: 768px) 92vw, (max-width: 1200px) 92vw, 92vw'}
+            src={'/Mountain_Lake_Fisherman_4790.jpg'}
             alt={'Watercolor of boy fishing in Colorado'}
             title={'Elk Creek, Colorado. Backpacking'}
           />
         </div>
         <div>
           <Painting
-            srcSet={'Uganda_Papyrus_Swamp.jpg 4648w,'}
-            sizes={'(max-width: 640px) 30rem, (max-width: 820px) 40rem, 50rem'}
-            src={'/Uganda_Papyrus_Swamp.jpg'}
+            srcSet={
+              'Uganda_Papyrus_Swamp_4648.jpg 4648w, Uganda_Papyrus_Swamp_1200.jpg 1200w, Uganda_Papyrus_Swamp_768.jpg 768w,'
+            }
+            sizes={'(max-width: 768px) 92vw, (max-width: 1200px) 92vw, 92vw'}
+            src={'/Uganda_Papyrus_Swamp_4648.jpg'}
             alt={'Watercolor of papyrus swamp in Uganda'}
             title={'Papyrus swamp in Uganda. Mission trip.'}
           />
