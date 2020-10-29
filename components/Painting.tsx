@@ -19,7 +19,7 @@ const Painting = ({ srcSet, sizes, src, alt, title }: PaintingProps) => {
   )
 }
 
-interface PaintingProps {
+type PaintingProps = {
   srcSet: string
   sizes: string
   src: string

@@ -40,28 +40,24 @@ export default function Home({
             —Marcel Proust, <cite>Swann's Way</cite>
           </footer>
         </blockquote>
-        <div>
-          <Painting
-            srcSet={
-              'Mountain_Lake_Fisherman_4790.jpg 4790w, Mountain_Lake_Fisherman_1200.jpg 1200w, Mountain_Lake_Fisherman_768.jpg 768w,'
-            }
-            sizes={'(max-width: 768px) 92vw, (max-width: 1200px) 92vw, 92vw'}
-            src={'/Mountain_Lake_Fisherman_4790.jpg'}
-            alt={'Watercolor of boy fishing in Colorado'}
-            title={'Elk Creek, Colorado. Backpacking.'}
-          />
-        </div>
-        <div>
-          <Painting
-            srcSet={
-              'Uganda_Papyrus_Swamp_4648.jpg 4648w, Uganda_Papyrus_Swamp_1200.jpg 1200w, Uganda_Papyrus_Swamp_768.jpg 768w,'
-            }
-            sizes={'(max-width: 768px) 92vw, (max-width: 1200px) 92vw, 92vw'}
-            src={'/Uganda_Papyrus_Swamp_4648.jpg'}
-            alt={'Watercolor of papyrus swamp in Uganda'}
-            title={'Papyrus swamp in Uganda. Mission trip.'}
-          />
-        </div>
+        <Painting
+          srcSet={
+            'Mountain_Lake_Fisherman_4790.jpg 4790w, Mountain_Lake_Fisherman_1200.jpg 1200w, Mountain_Lake_Fisherman_768.jpg 768w,'
+          }
+          sizes={'(max-width: 768px) 92vw, (max-width: 1200px) 65vw, 65vw'}
+          src={'/Mountain_Lake_Fisherman_4790.jpg'}
+          alt={'Watercolor of boy fishing in Colorado'}
+          title={'Elk Creek, Colorado. Backpacking.'}
+        />
+        <Painting
+          srcSet={
+            'Uganda_Papyrus_Swamp_4648.jpg 4648w, Uganda_Papyrus_Swamp_1200.jpg 1200w, Uganda_Papyrus_Swamp_768.jpg 768w,'
+          }
+          sizes={'(max-width: 768px) 92vw, (max-width: 1200px) 65vw, 65vw'}
+          src={'/Uganda_Papyrus_Swamp_4648.jpg'}
+          alt={'Watercolor of papyrus swamp in Uganda'}
+          title={'Papyrus swamp in Uganda. Mission trip.'}
+        />
         {/*
         <List>
           {posts.map((post) => (
