@@ -16,7 +16,7 @@ export default function Home({
         <title>Into My Own</title>
       </Head>
       <main css={mainCss}>
-        <h1 css={titleCss} className={styles.text_6xl}>
+        <h1 className={styles.text_6xl} css={titleCss}>
           {title}
         </h1>
         <h2 css={subtitleCss} className={styles.text_2xl}>
@@ -41,18 +41,23 @@ export default function Home({
           </footer>
         </blockquote>
         <Painting
-          src={'/Mountain_Lake_Fisherman_4790.jpg'}
+          src={'/Mountain_Lake_Fisherman_4790.JPG'}
           alt={'Watercolor of boy fishing in Colorado'}
           title={'Elk Creek, Colorado. Backpacking.'}
           width={4790}
           height={3322}
+          quality={75}
+          loading={'eager'}
+          priority
         />
         <Painting
-          src={'/Uganda_Papyrus_Swamp_4648.jpg'}
+          src={'/Uganda_Papyrus_Swamp_4648.JPG'}
           alt={'Watercolor of papyrus swamp in Uganda'}
           title={'Papyrus swamp in Uganda. Mission trip.'}
           width={4648}
           height={3194}
+          quality={75}
+          loading={'lazy'}
         />
         {/*
         <List>
@@ -88,10 +93,22 @@ const mainCss = css`
   align-items: center;
 `
 
+//Media queries update font to text_5xl and text_4xl.
+//This seems a little weird and may be a good reason to use tailwind
 const titleCss = css`
   margin: 0;
   text-transform: uppercase;
   color: #302928;
+  @media only screen and (max-width: 474px) {
+    font-size: 3rem;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+  @media only screen and (max-width: 356px) {
+    font-size: 2.25rem;
+    letter-spacing: 0em;
+    font-weight: 500;
+  }
 `
 //#FF6356
 //#eac3c2
