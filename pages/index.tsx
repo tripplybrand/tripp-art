@@ -41,7 +41,7 @@ export default function Home({
           </footer>
         </blockquote>
         <Painting
-          src={'/Mountain_Lake_Fisherman_4790.jpg'}
+          src={'/Mountain_Lake_Fisherman_4790.JPG'}
           alt={'Watercolor of boy fishing in Colorado'}
           title={'Elk Creek, Colorado. Backpacking.'}
           width={4790}
@@ -51,7 +51,7 @@ export default function Home({
           priority
         />
         <Painting
-          src={'/Uganda_Papyrus_Swamp_4648.jpg'}
+          src={'/Uganda_Papyrus_Swamp_4648.JPG'}
           alt={'Watercolor of papyrus swamp in Uganda'}
           title={'Papyrus swamp in Uganda. Mission trip.'}
           width={4648}
