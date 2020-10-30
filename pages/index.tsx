@@ -60,6 +60,7 @@ export default function Home({
           loading={'lazy'}
         />
         {/*
+        Use over Painting
         <List>
           {posts.map((post) => (
             <Link href='/posts/[id]' as={`/posts/${post.id}`}>
