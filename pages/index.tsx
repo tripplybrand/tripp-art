@@ -1,9 +1,10 @@
-import { InferGetStaticPropsType } from 'next'
+import { InferGetStaticPropsType, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Theme.module.css'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import Painting from '@components/Painting'
+import paintingsData from '../paintings-data.json'
 
 const title: string = 'Into My Own'
 
@@ -40,25 +41,20 @@ export default function Home({
             —Marcel Proust, <cite>Swann's Way</cite>
           </footer>
         </blockquote>
-        <Painting
-          src={'/Mountain_Lake_Fisherman_4790.JPG'}
-          alt={'Watercolor of boy fishing in Colorado'}
-          title={'Elk Creek, Colorado. Backpacking.'}
-          width={4790}
-          height={3322}
-          quality={75}
-          loading={'eager'}
-          priority
-        />
-        <Painting
-          src={'/Uganda_Papyrus_Swamp_4648.JPG'}
-          alt={'Watercolor of papyrus swamp in Uganda'}
-          title={'Papyrus swamp in Uganda. Mission trip.'}
-          width={4648}
-          height={3194}
-          quality={75}
-          loading={'lazy'}
-        />
+        {paintingsData.map((paintingObject) => {
+          return (
+            <Painting
+              src={paintingObject.src}
+              alt={paintingObject.alt}
+              title={paintingObject.title}
+              width={paintingObject.width}
+              height={paintingObject.height}
+              quality={paintingObject.quality}
+              loading={paintingObject.loading as 'eager' | 'lazy' | undefined}
+              priority={paintingObject.priority}
+            />
+          )
+        })}
         {/*
         Use over Painting
         <List>
