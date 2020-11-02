@@ -11,13 +11,13 @@
   },
   {
     "src": "/Uganda_Papyrus_Swamp_4648.JPG",
-    "alt": "Watercolor of boy fishing in Colorado",
-    "title": "Elk Creek, Colorado. Backpacking.",
-    "width": 4790,
-    "height": 3322,
+    "alt": "Watercolor of papyrus swamp in Uganda",
+    "title": "Papyrus swamp in Uganda. Mission trip.",
+    "width": 4648,
+    "height": 3194,
     "quality": 75,
-    "loading": "eager",
-    "priority": true
+    "loading": "lazy",
+    "priority": false
   }
   
 ]

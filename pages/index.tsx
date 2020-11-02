@@ -52,6 +52,7 @@ export default function Home({
               quality={paintingObject.quality}
               loading={paintingObject.loading as 'eager' | 'lazy' | undefined}
               priority={paintingObject.priority}
+              key={paintingObject.title}
             />
           )
         })}
