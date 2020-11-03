@@ -3,7 +3,7 @@
     "src": "/Mountain_Lake_Fisherman_4790.JPG",
     "alt": "Watercolor of boy fishing in Colorado",
     "title": "Elk Creek, Colorado. Backpacking.",
-    "slug": "coloradoBackpacking",
+    "id": "coloradoBackpacking",
     "width": 4790,
     "height": 3322,
     "quality": 75
@@ -12,7 +12,7 @@
     "src": "/Uganda_Papyrus_Swamp_4648.JPG",
     "alt": "Watercolor of papyrus swamp in Uganda",
     "title": "Papyrus swamp in Uganda. Mission trip.",
-    "slug": "ugandaPapyrus",
+    "id": "ugandaPapyrus",
     "width": 4648,
     "height": 3194,
     "quality": 75
@@ -21,7 +21,7 @@
     "src": "/Junction_Shotgun_Merit_Badge_4534.JPG",
     "alt": "Watercolor of boy shooting clay pigeons",
     "title": "Junction, Texas. Shotgun merit badge.",
-    "slug": "junctionShotgun",
+    "id": "junctionShotgun",
     "width": 4534,
     "height": 3107,
     "quality": 75

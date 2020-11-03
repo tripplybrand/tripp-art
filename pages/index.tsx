@@ -1,4 +1,3 @@
-import { InferGetStaticPropsType, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Theme.module.css'
@@ -9,9 +8,7 @@ import paintingsData from '../paintings-data.json'
 
 const title: string = 'Into My Own'
 
-export default function Home({
-  posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home() {
   return (
     <div css={containerCss}>
       <Head>
@@ -48,10 +45,10 @@ export default function Home({
             <Link
               href='/paintings/[id]'
               passHref
-              as={`/paintings/${paintingObject.slug}`}
-              key={paintingObject.slug}
+              as={`/paintings/${paintingObject.id}`}
+              key={paintingObject.id}
             >
-              <a>
+              <a css={paintingACss}>
                 <Painting
                   src={paintingObject.src}
                   alt={paintingObject.alt}
@@ -66,18 +63,6 @@ export default function Home({
             </Link>
           )
         })}
-        {/*         
-        Use over Painting
-        <List>
-          {posts.map((post) => (
-            <Link href='/posts/[id]' as={`/posts/${post.id}`}>
-              <ListItem key={post.id}>
-                <PostTitle>{post.title}</PostTitle>
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-          */}
       </main>
     </div>
   )
@@ -118,6 +103,7 @@ const titleCss = css`
     font-weight: 500;
   }
 `
+//Potential title colors
 //#FF6356
 //#eac3c2
 //#302928
@@ -152,44 +138,6 @@ const blockquoteFooterCss = css`
   text-align: right;
 `
 
-// export type Post = {
-//   userId: number
-//   id: number
-//   title: string
-//   body: string
-// }
-
-export type Post = {
-  src: string
-  alt: string
-  title: string
-  width: string | number
-  height: string | number
-  quality: string | number
-  loading?: 'lazy' | 'eager' | undefined
-  priority?: boolean
-  slug: string
-}
-
-// export type Painting = {
-//   src: string
-//   alt: string
-//   title: string
-//   width: string | number
-//   height: string | number
-//   quality?: string | number
-//   loading?: 'lazy' | 'eager' | undefined
-//   priority?: boolean
-// }
-
-export const getStaticProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-
-  const posts: Post[] = await res.json()
-
-  return {
-    props: {
-      posts,
-    },
-  }
-}
+const paintingACss = css`
+  margin: 5rem 0 0 0;
+`

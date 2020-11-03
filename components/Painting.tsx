@@ -43,7 +43,6 @@ type PaintingProps = {
 }
 
 const paintingCss = css`
-  margin: 5rem 0 0 0;
   width: 65vw;
   @media only screen and (max-width: 1200px) {
     width: 65vw;

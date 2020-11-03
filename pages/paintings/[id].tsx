@@ -1,105 +1,39 @@
-import {
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-  GetStaticPaths,
-} from 'next'
-import Head from 'next/head'
-import { Article, BlogpostImage } from '@components/Article'
-import type { Post } from '../index'
+import { useRouter } from 'next/router'
+import paintingsData from '../../paintings-data.json'
+import Painting from '@components/Painting'
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
 
-export default function BlogPost({
-  post,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { title } = post
-  return (
-    <div>
-      <Head>
-        <title>{title}</title>
-        <meta property='og:title' content={title} />
-      </Head>
-      <h1>{title}</h1>
+const PaintingPage = () => {
+  const router = useRouter()
+  const { id } = router.query
+  const paintingObject = paintingsData.find((object) => object.id === id)
+  return paintingObject ? (
+    <div css={mainCss}>
+      <Painting
+        src={paintingObject.src}
+        alt={paintingObject.alt}
+        title={paintingObject.title}
+        width={paintingObject.width}
+        height={paintingObject.height}
+        quality={paintingObject.quality}
+        loading={'eager'}
+        priority={false}
+      />
     </div>
+  ) : (
+    <p>Painting missing</p>
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  //Import from data
-  const slugArray = ['coloradoBackpacking', 'ugandaPapyrus', 'junctionShotgun']
+//Note: Paintings are set at 92vw so we take and split the remaining 8vw
+const mainCss = css`
+  padding: 2rem 4vw 5rem 4vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
-  const paths = slugArray.map((slug) => ({
-    params: { id: slug },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-//   const posts: Post[] = await res.json()
-
-//   const paths = posts.map((post) => ({
-//     params: { id: post.id.toString() },
-//   }))
-
-//   return {
-//     paths,
-//     fallback: false,
-//   }
-// }
-
-export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const { params } = context
-  console.log(params)
-
-  const post: Post = {
-    src: '/Uganda_Papyrus_Swamp_4648.JPG',
-    alt: 'Watercolor of papyrus swamp in Uganda',
-    title: 'Papyrus swamp in Uganda. Mission trip.',
-    slug: 'ugandaPapyrus',
-    width: 4648,
-    height: 3194,
-    quality: 75,
-    loading: 'lazy',
-    priority: false,
-  }
-
-  return {
-    props: {
-      post,
-    },
-  }
-}
-
-// export const getStaticProps = async (context: GetStaticPropsContext) => {
-//   const { params } = context
-
-//   const emptyPost: Post = {
-//     title: 'Post not found',
-//     body: '',
-//     id: 0,
-//     userId: 0,
-//   }
-
-//   if (!params?.id) {
-//     return {
-//       props: {
-//         post: emptyPost,
-//       },
-//     }
-//   }
-
-//   const res = await fetch(
-//     `https://jsonplaceholder.typicode.com/posts/${params.id}`
-//   )
-
-//   const post: Post = await res.json()
-
-//   return {
-//     props: {
-//       post,
-//     },
-//   }
-// }
+export default PaintingPage
