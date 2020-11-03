@@ -10,7 +10,7 @@ const Painting = ({
   width,
   height,
   quality,
-  loading = 'lazy',
+  loading,
   priority,
 }: PaintingProps) => {
   return (
@@ -37,7 +37,7 @@ type PaintingProps = {
   title: string
   width: string | number
   height: string | number
-  quality?: string | number
+  quality: string | number
   loading?: 'lazy' | 'eager' | undefined
   priority?: boolean
 }

@@ -42,7 +42,8 @@ export default function Home({
             —Marcel Proust, <cite>Swann's Way</cite>
           </footer>
         </blockquote>
-        {paintingsData.map((paintingObject) => {
+        {paintingsData.map((paintingObject, i) => {
+          const loading = i === 0 ? 'eager' : 'lazy'
           return (
             <Link
               href='/paintings/[id]'
@@ -58,10 +59,8 @@ export default function Home({
                   width={paintingObject.width}
                   height={paintingObject.height}
                   quality={paintingObject.quality}
-                  loading={
-                    paintingObject.loading as 'eager' | 'lazy' | undefined
-                  }
-                  priority={paintingObject.priority}
+                  loading={loading as 'eager' | 'lazy'}
+                  priority={i === 0 ? true : false}
                 />
               </a>
             </Link>
@@ -166,7 +165,7 @@ export type Post = {
   title: string
   width: string | number
   height: string | number
-  quality?: string | number
+  quality: string | number
   loading?: 'lazy' | 'eager' | undefined
   priority?: boolean
   slug: string

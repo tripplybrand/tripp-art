@@ -6,9 +6,7 @@
     "slug": "coloradoBackpacking",
     "width": 4790,
     "height": 3322,
-    "quality": 75,
-    "loading": "eager",
-    "priority": true
+    "quality": 75
   },
   {
     "src": "/Uganda_Papyrus_Swamp_4648.JPG",
@@ -17,9 +15,7 @@
     "slug": "ugandaPapyrus",
     "width": 4648,
     "height": 3194,
-    "quality": 75,
-    "loading": "lazy",
-    "priority": false
+    "quality": 75
   },
   {
     "src": "/Junction_Shotgun_Merit_Badge_4534.JPG",
@@ -28,9 +24,7 @@
     "slug": "junctionShotgun",
     "width": 4534,
     "height": 3107,
-    "quality": 75,
-    "loading": "lazy",
-    "priority": false
+    "quality": 75
   }
   
 ]
