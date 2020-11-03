@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType, GetStaticPaths } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Theme.module.css'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
@@ -43,20 +44,30 @@ export default function Home({
         </blockquote>
         {paintingsData.map((paintingObject) => {
           return (
-            <Painting
-              src={paintingObject.src}
-              alt={paintingObject.alt}
-              title={paintingObject.title}
-              width={paintingObject.width}
-              height={paintingObject.height}
-              quality={paintingObject.quality}
-              loading={paintingObject.loading as 'eager' | 'lazy' | undefined}
-              priority={paintingObject.priority}
-              key={paintingObject.title}
-            />
+            <Link
+              href='/paintings/[id]'
+              passHref
+              as={`/paintings/${paintingObject.slug}`}
+              key={paintingObject.slug}
+            >
+              <a>
+                <Painting
+                  src={paintingObject.src}
+                  alt={paintingObject.alt}
+                  title={paintingObject.title}
+                  width={paintingObject.width}
+                  height={paintingObject.height}
+                  quality={paintingObject.quality}
+                  loading={
+                    paintingObject.loading as 'eager' | 'lazy' | undefined
+                  }
+                  priority={paintingObject.priority}
+                />
+              </a>
+            </Link>
           )
         })}
-        {/*
+        {/*         
         Use over Painting
         <List>
           {posts.map((post) => (
@@ -142,12 +153,35 @@ const blockquoteFooterCss = css`
   text-align: right;
 `
 
+// export type Post = {
+//   userId: number
+//   id: number
+//   title: string
+//   body: string
+// }
+
 export type Post = {
-  userId: number
-  id: number
+  src: string
+  alt: string
   title: string
-  body: string
+  width: string | number
+  height: string | number
+  quality?: string | number
+  loading?: 'lazy' | 'eager' | undefined
+  priority?: boolean
+  slug: string
 }
+
+// export type Painting = {
+//   src: string
+//   alt: string
+//   title: string
+//   width: string | number
+//   height: string | number
+//   quality?: string | number
+//   loading?: 'lazy' | 'eager' | undefined
+//   priority?: boolean
+// }
 
 export const getStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
