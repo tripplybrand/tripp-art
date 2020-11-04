@@ -2,6 +2,7 @@
 import { jsx, css } from '@emotion/core'
 import styles from '../styles/Theme.module.css'
 import Image from 'next/image'
+import PaintingType from '../types/painting'
 
 const Painting = ({
   src,
@@ -12,7 +13,7 @@ const Painting = ({
   quality,
   loading,
   priority,
-}: PaintingProps) => {
+}: Omit<PaintingType, 'id'>) => {
   return (
     <div css={paintingCss}>
       <Image
@@ -29,17 +30,6 @@ const Painting = ({
       </h3>
     </div>
   )
-}
-
-type PaintingProps = {
-  src: string
-  alt: string
-  title: string
-  width: string | number
-  height: string | number
-  quality: string | number
-  loading?: 'lazy' | 'eager' | undefined
-  priority?: boolean
 }
 
 const paintingCss = css`
