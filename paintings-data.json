@@ -6,7 +6,7 @@
     "id": "coloradoBackpacking",
     "width": 4790,
     "height": 3322,
-    "quality": 75
+    "quality": 100
   },
   {
     "src": "/Uganda_Papyrus_Swamp_4648.JPG",
@@ -15,15 +15,15 @@
     "id": "ugandaPapyrus",
     "width": 4648,
     "height": 3194,
-    "quality": 75
+    "quality": 100
   },
   {
-    "src": "/Junction_Shotgun_Merit_Badge_4534.JPG",
+    "src": "/Junction_Shotgun_Merit_Badge_4168.JPG",
     "alt": "Watercolor of boy shooting clay pigeons",
     "title": "Junction, Texas. Shotgun merit badge.",
     "id": "junctionShotgun",
-    "width": 4534,
-    "height": 3107,
-    "quality": 75
+    "width": 4168,
+    "height": 2905,
+    "quality": 100
   }
 ]
